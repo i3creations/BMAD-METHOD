@@ -1,0 +1,11 @@
+# <!-- Powered by BMAD™ Core -->
+name: bmad-rfq-government
+version: 1.0.0
+short-title: Government RFQ Studio
+description: >-
+  Specialized expansion pack for creating, managing, and responding to government
+  Requests for Quotation (RFQs). Includes specialized agents, workflows, and tools
+  for understanding government procurement processes, compliance requirements,
+  proposal development, and bid management.
+author: CVP
+slashPrefix: bmad-rfq
