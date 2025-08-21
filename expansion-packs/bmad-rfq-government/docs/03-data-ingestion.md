@@ -52,3 +52,59 @@ For RFQs, it can be repurposed to:
 ```bash
 npx bmad-method flatten --input rfq.zip --output rfq_flattened.xml
 ```
+
+This produces a machine-readable corpus ready for AI agents.
+
+## Preparing Corporate Data
+
+Beyond the RFQ, proposals require internal data.
+AI needs access to these sources to generate accurate drafts.
+
+### Past Performance
+
+- Contract descriptions, period of performance, contract value
+- Relevance tags: scope, size, complexity, technology
+- AI Usage: Draft Past Performance Narratives tailored to RFQ tasks
+
+### Resumes / Key Personnel
+
+- Skills, certifications, relevant project history
+- Map to RFQ-required Key Personnel positions
+- AI Usage: Generate tailored resumes and staffing justifications
+
+### Labor Rate Sheets
+
+- GSA schedule rates, IDIQ ceiling rates, or company pricing sheets
+- Labor category mappings (Engineer I → Computer Engineer II, etc.)
+- AI Usage: Support cost realism narratives and assumptions
+
+---
+
+## Data Redaction & Security
+
+AI ingestion should respect confidentiality:
+
+- Redact PII (e.g., SSNs, personal addresses)
+- Mask company-sensitive pricing unless needed for draft generation
+- Use tags to mark sensitive data (e.g., <restricted>) so agents know what not to expose in outputs
+
+---
+
+## Building an AI-Ready Corpus
+
+Steps to build a robust corpus for RFQ proposal generation:
+
+1. Collect RFQ artifacts (L, M, SOW, Amendments, Attachments).
+2. Run the Flattener Tool to normalize into structured XML.
+3. Ingest corporate data (past performance, resumes, rates).
+4. Tag sensitive content with redaction labels.
+5. Store outputs in /corpus/YYYY-MM-DD/ with version control.
+6. Provide agents controlled access to corpus subsets (e.g., Review-Sim agent only sees RFQ + drafts, not internal rate sheets).
+
+## Summary
+
+- Data ingestion is the foundation of AI-driven proposal generation.
+- RFQ artifacts (Sections L, M, SOW, Amendments) must be parsed and tagged.
+- Corporate data (past performance, resumes, rates) enriches AI outputs.
+- BMAD’s Flattener Tool transforms unstructured files into AI-ready XML.
+- Redaction ensures compliance and protects sensitive information.

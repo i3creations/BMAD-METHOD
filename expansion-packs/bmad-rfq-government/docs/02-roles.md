@@ -165,3 +165,9 @@ roles:
       - technical_drafter
       - risk_mitigator
 ```
+
+## Summary
+
+- BMAD’s role-based structure is directly extendable to RFQ workflows.
+- Each human role has a corresponding AI agent role for automation.
+- Roles and agents together form the orchestration backbone of the RFQ Expansion Pack.
