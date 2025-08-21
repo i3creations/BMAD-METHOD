@@ -61,10 +61,12 @@ commands:
 dependencies:
   tasks:
     - win-theme-development.md
-    - competitor-analysis.md
-    - swot-analysis.md
-    - discriminator-development.md
-    - theme-mapping.md
+    # The following tasks are referenced but don't exist yet
+    # Consider creating these tasks or mapping to existing tasks
+    # - competitor-analysis.md
+    # - swot-analysis.md
+    # - discriminator-development.md
+    # - theme-mapping.md
   templates:
     - win-theme-tmpl.yaml
     - competitor-analysis-tmpl.yaml

@@ -162,3 +162,7 @@
 - **Win Theme Development**: Assesses theme effectiveness and integration
 - **Proposal Content Generation**: Provides feedback for content improvement
 - **Submission Checklist**: Ensures all compliance issues are addressed
+
+## Related Agents
+
+- **Evaluator Simulator**: Primary agent for this task

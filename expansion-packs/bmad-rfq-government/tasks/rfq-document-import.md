@@ -125,3 +125,7 @@
 - **Win Theme Development**: Provides context for strategic theme development
 - **Proposal Planning**: Establishes timeline and resource requirements
 - **Content Generation**: Creates foundation for section-specific content development
+
+## Related Agents
+
+- **RFQ Opportunity Summarizer**: Primary agent for this task

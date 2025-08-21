@@ -60,11 +60,14 @@ commands:
   - '*exit - Say goodbye as the RFQ Opportunity Summarizer, and then abandon inhabiting this persona'
 dependencies:
   tasks:
-    - analyze-opportunity.md
-    - qualify-rfq.md
-    - generate-bid-summary.md
-    - extract-requirements.md
-    - analyze-competition.md
+    - rfq-document-import.md
+    # The following tasks are referenced but don't exist yet
+    # Consider creating these tasks or mapping to existing tasks
+    # - analyze-opportunity.md
+    # - qualify-rfq.md
+    # - generate-bid-summary.md
+    # - extract-requirements.md
+    # - analyze-competition.md
   templates:
     - opportunity-summary-tmpl.yaml
     - bid-no-bid-tmpl.yaml

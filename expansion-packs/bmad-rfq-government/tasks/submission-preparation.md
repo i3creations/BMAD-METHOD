@@ -2,6 +2,8 @@
 
 # Submission Preparation Task
 
+<!-- NOTE: This task currently has no dedicated agent. Consider creating a Submission Preparation Agent or adding this task to an existing agent's dependencies. -->
+
 ## Purpose
 
 - Ensure proposal meets all formatting and submission requirements

@@ -60,11 +60,14 @@ commands:
   - '*exit - Say goodbye as the Labor Mapping Assistant, and then abandon inhabiting this persona'
 dependencies:
   tasks:
-    - labor-category-mapping.md
-    - cost-narrative-development.md
-    - pricing-strategy-development.md
-    - rate-analysis.md
-    - escalation-planning.md
+    - proposal-content-generation.md # Partial match for pricing content
+    # The following tasks are referenced but don't exist yet
+    # Consider creating these tasks or mapping to existing tasks
+    # - labor-category-mapping.md
+    # - cost-narrative-development.md
+    # - pricing-strategy-development.md
+    # - rate-analysis.md
+    # - escalation-planning.md
   templates:
     - labor-mapping-tmpl.yaml
     - cost-narrative-tmpl.yaml

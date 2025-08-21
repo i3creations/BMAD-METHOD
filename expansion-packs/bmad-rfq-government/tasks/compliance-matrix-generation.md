@@ -141,3 +141,7 @@
 - **Content Generation**: Drives section-specific content requirements
 - **Review Simulation**: Provides foundation for compliance verification
 - **Submission Checklist**: Ensures all requirements are addressed before submission
+
+## Related Agents
+
+- **Compliance Matrix Builder**: Primary agent for this task

@@ -160,3 +160,7 @@ Identify concepts in the text that could be more effectively communicated throug
 - **Involve SMEs**: Include subject matter experts in elicitation sessions when possible
 - **Connect to Evaluation**: Always tie elicitation back to evaluation criteria and win probability
 - **Iterative Approach**: Use multiple methods on critical sections for comprehensive improvement
+
+## Related Agents
+
+- **All Agents**: This is a utility task that can be used by any agent in the RFQ Government expansion pack

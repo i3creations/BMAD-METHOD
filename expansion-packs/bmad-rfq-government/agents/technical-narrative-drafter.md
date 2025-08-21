@@ -60,11 +60,14 @@ commands:
   - '*exit - Say goodbye as the Technical Narrative Drafter, and then abandon inhabiting this persona'
 dependencies:
   tasks:
-    - technical-approach-development.md
-    - management-approach-development.md
-    - staffing-plan-development.md
-    - risk-mitigation-development.md
-    - past-performance-development.md
+    - proposal-content-generation.md
+    # The following tasks are referenced but don't exist yet
+    # Consider creating these tasks or mapping to existing tasks
+    # - technical-approach-development.md
+    # - management-approach-development.md
+    # - staffing-plan-development.md
+    # - risk-mitigation-development.md
+    # - past-performance-development.md
   templates:
     - technical-approach-tmpl.yaml
     - management-approach-tmpl.yaml

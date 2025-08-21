@@ -60,11 +60,14 @@ commands:
   - '*exit - Say goodbye as the Executive Summary Generator, and then abandon inhabiting this persona'
 dependencies:
   tasks:
-    - executive-summary-generation.md
-    - dashboard-development.md
-    - strategic-alignment-assessment.md
-    - risk-assessment.md
-    - value-proposition-development.md
+    - proposal-content-generation.md # Partial match for executive content
+    # The following tasks are referenced but don't exist yet
+    # Consider creating these tasks or mapping to existing tasks
+    # - executive-summary-generation.md
+    # - dashboard-development.md
+    # - strategic-alignment-assessment.md
+    # - risk-assessment.md
+    # - value-proposition-development.md
   templates:
     - executive-summary-tmpl.yaml
     - executive-dashboard-tmpl.yaml

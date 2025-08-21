@@ -61,10 +61,12 @@ commands:
 dependencies:
   tasks:
     - compliance-matrix-generation.md
-    - section-outline-generation.md
-    - requirement-mapping.md
-    - page-allocation.md
-    - compliance-verification.md
+    # The following tasks are referenced but don't exist yet
+    # Consider creating these tasks or mapping to existing tasks
+    # - section-outline-generation.md
+    # - requirement-mapping.md
+    # - page-allocation.md
+    # - compliance-verification.md
   templates:
     - compliance-matrix-tmpl.yaml
     - proposal-outline-tmpl.yaml

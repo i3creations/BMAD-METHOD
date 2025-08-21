@@ -152,3 +152,7 @@
 - **Proposal Content Generation**: Guides content development with strategic messaging
 - **Review Simulation**: Provides criteria for evaluating theme effectiveness
 - **Executive Summary Development**: Forms the core messaging for the executive summary
+
+## Related Agents
+
+- **Win Theme Generator**: Primary agent for this task

@@ -160,3 +160,9 @@
 - **Win Theme Development**: Provides strategic messaging for content
 - **Review Simulation**: Feeds back improvements based on evaluation criteria
 - **Submission Checklist**: Verifies content meets all formatting requirements
+
+## Related Agents
+
+- **Technical Narrative Drafter**: Primary agent for this task
+- **Executive Summary Generator**: Uses this task for executive content
+- **Labor Mapping Assistant**: Uses this task for pricing content

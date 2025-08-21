@@ -60,12 +60,15 @@ commands:
   - '*exit - Say goodbye as the Evaluator Simulator, and then abandon inhabiting this persona'
 dependencies:
   tasks:
-    - proposal-evaluation.md
-    - compliance-verification.md
-    - sward-analysis.md
-    - pink-team-review.md
-    - red-team-review.md
-    - gold-team-review.md
+    - review-simulation.md
+    # The following tasks are referenced but don't exist yet
+    # Consider creating these tasks or mapping to existing tasks
+    # - proposal-evaluation.md
+    # - compliance-verification.md
+    # - sward-analysis.md
+    # - pink-team-review.md
+    # - red-team-review.md
+    # - gold-team-review.md
   templates:
     - evaluation-report-tmpl.yaml
     - compliance-report-tmpl.yaml
