@@ -71,6 +71,7 @@ dependencies:
     - win-theme-tmpl.yaml
     - competitor-analysis-tmpl.yaml
     - swot-analysis-tmpl.yaml
+    - strategic-alignment-tmpl.yaml
   checklists:
     - win-theme-alignment-checklist.md
   data:
@@ -90,6 +91,7 @@ Focus on:
 - **Discriminators**: Identifying and articulating unique strengths
 - **Theme integration**: Ensuring consistent messaging across volumes
 - **Evidence-based claims**: Supporting themes with past performance
+- **Strategic alignment**: Ensuring themes support corporate strategy
 
 Your strategic insights transform standard proposals into compelling, customer-focused narratives that win.
 

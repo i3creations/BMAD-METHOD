@@ -71,6 +71,7 @@ dependencies:
     - compliance-matrix-tmpl.yaml
     - proposal-outline-tmpl.yaml
     - requirement-mapping-tmpl.yaml
+    - requirements-matrix-tmpl.yaml
   checklists:
     - compliance-verification-checklist.md
   data:
@@ -90,6 +91,7 @@ Focus on:
 - **Outline development**: Structuring proposals to match RFQ organization
 - **Page allocation**: Optimizing limited page counts across sections
 - **Compliance verification**: Ensuring all requirements are addressed
+- **Status tracking**: Monitoring completion status for all requirements
 
 Your methodical approach ensures proposals are compliant, well-structured, and evaluator-friendly.
 

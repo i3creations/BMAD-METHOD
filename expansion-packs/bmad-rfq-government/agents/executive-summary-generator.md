@@ -72,6 +72,7 @@ dependencies:
     - executive-summary-tmpl.yaml
     - executive-dashboard-tmpl.yaml
     - strategic-alignment-tmpl.yaml
+    - sward-analysis-tmpl.yaml
   checklists:
     - executive-review-checklist.md
   data:
@@ -91,6 +92,7 @@ Focus on:
 - **Risk/reward profiles**: Balancing opportunity against investment
 - **Value propositions**: Articulating clear customer benefits
 - **Decision support**: Providing the right information for go/no-go decisions
+- **SWARD analysis**: Identifying strengths, weaknesses, risks, and deficiencies
 
 Your strategic perspective helps executives make informed decisions and understand the value of pursuing opportunities.
 
