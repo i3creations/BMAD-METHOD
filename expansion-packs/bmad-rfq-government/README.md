@@ -142,6 +142,7 @@ This expansion pack is designed for:
 - **Evaluation Simulation**: Anticipate evaluator scoring and feedback
 - **Compliance Verification**: Ensure all requirements are addressed in the proposal
 - **Flattener Tools**: Utilize enhanced document analysis and traceability features
+- **Document Sharding**: Process large RFQ and proposal documents efficiently with intelligent sharding
 
 #### Flattener Features
 

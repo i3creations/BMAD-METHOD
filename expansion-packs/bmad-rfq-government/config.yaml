@@ -2,7 +2,7 @@
 config:
   id: bmad-rfq-government
   name: BMAD RFQ Government Response Pack
-  version: 1.0.0
+  version: 1.1.0
   description: >-
     A specialized expansion pack for government RFQ response and proposal development.
     Provides agents, templates, and workflows for efficient preparation of compliant
@@ -33,9 +33,13 @@ config:
       description: "Uses bmad-core's advanced elicitation techniques"
       core_component: advanced-elicitation.md
 
+    - name: document-sharding
+      description: "Uses bmad-core's document sharding capabilities"
+      core_component: shard-doc.md
+
   maintained_by: "BMAD Core Team"
   license: "MIT"
-  documentation: "docs/README.md"
+  documentation: "README.md"
 
   template_categories:
     - category: Opportunity Assessment
