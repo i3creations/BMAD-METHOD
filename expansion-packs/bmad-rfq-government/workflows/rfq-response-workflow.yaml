@@ -59,10 +59,23 @@ workflow:
       uses_task: win-theme-development.md
       notes: "Develop compelling win themes and discriminators. SAVE OUTPUT: Copy final win-themes.md to your project's docs/ folder."
 
+    - step_name: win_theme_integration
+      uses: bmad-flatten
+      creates: theme-coverage-report.md
+      requires:
+        - win-themes.md
+      notes: "Ensure consistent application of win themes across all proposal sections."
+
     - agent: compliance-matrix-builder
       creates: rfq-imported-content
       uses_task: rfq-document-import.md
       notes: "Import and organize RFQ documents for compliance tracking."
+
+    - step_name: flatten_rfq_documents
+      uses: bmad-flatten
+      creates: unified-rfq.xml
+      requires: rfq-imported-content
+      notes: "Aggregate all RFQ documents into a single analyzable corpus for improved analysis and traceability."
 
     - agent: compliance-matrix-builder
       creates: compliance-matrix.md
@@ -70,6 +83,14 @@ workflow:
       requires: rfq-imported-content
       uses_task: compliance-matrix-generation.md
       notes: "Generate comprehensive compliance matrix from RFQ. SAVE OUTPUT: Copy final compliance-matrix.md to your project's docs/ folder."
+
+    - step_name: requirements_traceability
+      uses: bmad-flatten
+      creates: requirements-database.json
+      requires:
+        - unified-rfq.xml
+        - compliance-matrix.md
+      notes: "Create comprehensive traceability between RFQ requirements and proposal elements."
 
     - agent: compliance-matrix-builder
       creates: proposal-outline.md
@@ -152,6 +173,15 @@ workflow:
       uses_task: review-simulation.md
       notes: "Simulate evaluator assessment and identify improvements. SAVE OUTPUT: Copy final evaluation-report.md to your project's docs/ folder."
 
+    - step_name: evaluation_flattening
+      uses: bmad-flatten
+      creates: evaluation-flattened.xml
+      requires:
+        - unified-rfq.xml
+        - sward-analysis.md
+        - evaluation-report.md
+      notes: "Enable comprehensive cross-document evaluation with unified SWARD analysis and consistency verification."
+
     - revision_cycle:
       agent: various
       updates: proposal_content
@@ -171,6 +201,12 @@ workflow:
         - cost-narrative.md
       notes: "Verify all requirements are addressed in proposal. SAVE OUTPUT: Copy final compliance-report.md to your project's docs/ folder."
 
+    - step_name: workflow_optimization
+      uses: bmad-flatten
+      creates: workflow-status.json
+      requires: all_proposal_documents
+      notes: "Provide unified status tracking and dependency management for the proposal workflow."
+
     - final_review_gate:
       action: executive_review
       uses_checklist: executive-review-checklist.md
@@ -188,6 +224,52 @@ workflow:
       notes: |
         Proposal response complete!
         Follow submission instructions from the RFQ.
+
+  flattener_tools:
+    - name: rfq-flattener
+      description: "Aggregate all RFQ documents into a single analyzable corpus"
+      implements:
+        - Document structure recognition
+        - Automated extraction of requirements, evaluation criteria, and instructions
+        - RFQ content de-duplication and cross-referencing
+        - Unified search across all RFQ materials
+      priority: high
+
+    - name: requirements-flattener
+      description: "Create comprehensive traceability between RFQ requirements and proposal elements"
+      implements:
+        - Automated requirement extraction and classification
+        - Unique identifier assignment to each requirement
+        - Traceability matrix generation
+        - Compliance verification across all proposal documents
+      priority: high
+
+    - name: theme-flattener
+      description: "Ensure consistent application of win themes across all proposal sections"
+      implements:
+        - Theme extraction and classification
+        - Theme coverage analysis across all proposal sections
+        - Heat map visualization showing theme implementation
+        - Automatic suggestions for improved theme integration
+      priority: medium
+
+    - name: evaluation-flattener
+      description: "Enable comprehensive cross-document evaluation"
+      implements:
+        - Unified SWARD analysis across all proposal components
+        - Cross-document consistency verification
+        - Automated evaluation against RFQ criteria
+        - Issue prioritization and remediation recommendations
+      priority: medium
+
+    - name: workflow-flattener
+      description: "Provide unified status tracking and dependency management"
+      implements:
+        - Real-time status dashboard for all proposal components
+        - Dependency tracking between sections
+        - Parallel workstream enablement
+        - Impact analysis for proposed changes
+      priority: low
 
   flow_diagram: |
     ```mermaid
