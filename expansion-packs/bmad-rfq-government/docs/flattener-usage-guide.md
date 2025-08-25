@@ -153,7 +153,114 @@ The RFQ Response workflow has been updated to incorporate flattener operations a
 **Solution**: Revise sections with low theme presence to incorporate win themes more effectively
 
 **Issue**: Large files causing performance issues
-**Solution**: Split large sections into smaller components or use selective flattening on specific directories
+**Solution**: Use sharding capabilities to break large documents into manageable chunks
+
+## Sharding Capabilities
+
+### Overview
+
+Sharding extends the flattener architecture with the ability to break down large documents into smaller, more manageable pieces (shards) while preserving context and relationships. This enables processing of extensive RFQs and proposal content that would otherwise exceed token limits or create performance issues.
+
+### Available Sharding Tools
+
+#### 1. RFQ Sharding Flattener
+
+**Purpose**: Process and shard large RFQ documents into manageable, context-preserving chunks
+
+**When to Use**: After importing RFQ documents and before creating the compliance matrix, especially for large RFQs (>100 pages)
+
+**Key Features**:
+
+- RFQ document structure recognition for optimal break points
+- Semantic sharding based on requirement boundaries
+- Metadata preservation across shards
+- Shard manifest generation for tracking relationships
+- Cross-shard reference tracking
+
+**Usage**:
+
+```
+bmad-flatten -i ./rfq-documents/ -o ./rfq-shards-manifest.json --mode=rfq-sharding
+```
+
+**Output**: A manifest file containing metadata about all shards and their relationships, plus individual shard files
+
+#### 2. Proposal Content Sharding
+
+**Purpose**: Enable efficient development of lengthy technical and management narratives through sharding
+
+**When to Use**: When developing large proposal volumes or complex technical/management narratives
+
+**Key Features**:
+
+- Logical content segmentation based on natural break points
+- Context preservation between shards with appropriate overlaps
+- Win theme and requirement tracking metadata across shards
+- Parallel development workflow support
+- Content reassembly management
+
+**Usage**:
+
+```
+bmad-flatten -i ./proposal-drafts/ -o ./proposal-shards-manifest.json --mode=content-sharding --themes=./win-themes.md
+```
+
+**Output**: A manifest file containing metadata about content shards and their relationships, plus individual content shard files
+
+### Sharding Strategies
+
+1. **Structural Sharding**: Breaks content at natural section/subsection boundaries
+   - Best for: Well-structured documents with clear hierarchical organization
+   - Example: Breaking an RFQ at major section boundaries (L.1, L.2, etc.)
+
+2. **Semantic Sharding**: Breaks content based on meaning and topic cohesion
+   - Best for: Narrative content where structure doesn't align with natural topic boundaries
+   - Example: Breaking a technical approach into logical capability descriptions
+
+3. **Requirement-Based Sharding**: Breaks content based on requirement groupings
+   - Best for: Compliance-focused content where requirements drive structure
+   - Example: Grouping related SOW requirements into discrete shards
+
+4. **Size-Based Sharding**: Breaks content to maintain consistent shard sizes
+   - Best for: Very large documents where token limits are the primary concern
+   - Example: Breaking lengthy appendices into equally-sized chunks
+
+### Best Practices for Sharding
+
+1. **Optimal Shard Size**: Target 3,000-5,000 tokens per shard for most effective processing
+2. **Context Preservation**: Include 100-200 tokens of overlap at shard boundaries
+3. **Metadata Enrichment**: Add consistent metadata to all shards for tracking and reassembly
+4. **Logical Boundaries**: Break at natural concept or section boundaries whenever possible
+5. **Relationship Documentation**: Clearly document relationships between shards in manifest
+6. **Version Control**: Implement strict versioning for shards to prevent inconsistencies
+7. **Regular Validation**: Periodically reassemble and validate to ensure content integrity
+8. **Parallel Coordination**: When using parallel processing, establish clear synchronization points
+
+### Working with Sharded Content
+
+#### Navigation Between Shards
+
+The shard manifest provides relationship information necessary to navigate between related shards. Use the visualization tools to explore shard relationships:
+
+```
+bmad-flatten -i ./rfq-shards-manifest.json -o ./shard-visualization.html --mode=shard-visualization
+```
+
+#### Parallel Development
+
+Sharded content enables parallel development by multiple team members. Use the workflow tools to coordinate:
+
+```
+bmad-flatten -i ./proposal-shards-manifest.json -o ./workflow-status.json --mode=parallel-workflow-status
+```
+
+#### Content Reassembly
+
+When content development is complete, use the smart reassembly tools:
+
+```
+bmad-flatten -i ./proposal-shards-manifest.json -o ./reassembled-proposal.docx --mode=shard-reassembly
+```
 
 ## Example: Department of Energy IT Services RFQ
 
@@ -204,5 +311,68 @@ The RFQ Response workflow has been updated to incorporate flattener operations a
 ---
 
 _Document Version: 1.0.0_  
-_Created: August 25, 2025_  
+_Created: August 25, 2025_
+_Updated: August 25, 2025_
 _Author: BMAD Method Team_
+
+## Appendix A: Shard Usage Example - Large Technical RFQ
+
+### Day 1: Initial RFQ Processing with Sharding
+
+1. Import large technical RFQ documents
+2. Run RFQ Sharding Flattener:
+   ```
+   bmad-flatten -i ./technical-rfq-docs/ -o ./rfq-shards-manifest.json --mode=rfq-sharding
+   ```
+3. Review shard manifest and explore shard structure:
+   ```
+   bmad-flatten -i ./rfq-shards-manifest.json -o ./shard-visualization.html --mode=shard-visualization
+   ```
+
+### Day 3: Requirements Processing with Sharding
+
+1. Generate compliance matrix from sharded RFQ:
+   ```
+   bmad-flatten -i ./rfq-shards-manifest.json -o ./compliance-requirements.json --mode=sharded-requirements-extraction
+   ```
+2. Shard the compliance requirements for parallel processing:
+   ```
+   bmad-flatten -i ./compliance-requirements.json -o ./requirement-shards-manifest.json --mode=requirement-sharding
+   ```
+3. Distribute requirement shards to subject matter experts for analysis
+
+### Day 5: Content Development with Sharding
+
+1. Create proposal content shards based on outline:
+   ```
+   bmad-flatten -i ./proposal-outline.md -o ./content-shards-manifest.json --mode=content-shard-creation
+   ```
+2. Assign shards to content developers for parallel development
+3. Track progress across shards:
+   ```
+   bmad-flatten -i ./content-shards-manifest.json -o ./development-status.html --mode=parallel-workflow-status
+   ```
+
+### Day 8: Review and Evaluation with Sharded Content
+
+1. Reassemble draft content for comprehensive review:
+   ```
+   bmad-flatten -i ./content-shards-manifest.json -o ./draft-proposal-full.docx --mode=shard-reassembly
+   ```
+2. Conduct shard-aware evaluation:
+   ```
+   bmad-flatten -i ./content-shards-manifest.json -o ./evaluation-results.json --mode=shard-aware-evaluation
+   ```
+3. Visualize evaluation results across shards:
+   ```
+   bmad-flatten -i ./evaluation-results.json -o ./evaluation-heatmap.html --mode=shard-evaluation-visualization
+   ```
+
+### Day 10: Final Integration and Submission Preparation
+
+1. Implement final revisions in relevant shards
+2. Execute final reassembly with cross-reference resolution:
+   ```
+   bmad-flatten -i ./content-shards-manifest.json -o ./final-proposal.docx --mode=shard-reassembly --resolve-references=true
+   ```
+3. Conduct final quality check across reassembled content

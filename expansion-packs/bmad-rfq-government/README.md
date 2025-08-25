@@ -1,6 +1,6 @@
 # BMAD RFQ Government Response Pack
 
-![Version](https://img.shields.io/badge/version-1.0.0-blue)
+![Version](https://img.shields.io/badge/version-1.1.0-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 ## Overview
@@ -318,13 +318,15 @@ This expansion pack integrates with BMAD Core through:
 
 The RFQ Government expansion pack extends BMAD Core's flattener architecture with specialized tools:
 
-| Flattener                  | Purpose                             | Key Features                                                               |
-| -------------------------- | ----------------------------------- | -------------------------------------------------------------------------- |
-| **RFQ Flattener**          | Aggregate and analyze RFQ documents | Document structure recognition, requirements extraction, cross-referencing |
-| **Requirements Flattener** | Create traceability matrix          | Automated requirement classification, compliance verification              |
-| **Theme Flattener**        | Track win theme coverage            | Theme analysis across documents, heat map visualization                    |
-| **Evaluation Flattener**   | Cross-document analysis             | Unified SWARD analysis, consistency verification                           |
-| **Workflow Flattener**     | Status tracking                     | Dependency tracking, impact analysis                                       |
+| Flattener                       | Purpose                             | Key Features                                                                 |
+| ------------------------------- | ----------------------------------- | ---------------------------------------------------------------------------- |
+| **RFQ Flattener**               | Aggregate and analyze RFQ documents | Document structure recognition, requirements extraction, cross-referencing   |
+| **Requirements Flattener**      | Create traceability matrix          | Automated requirement classification, compliance verification                |
+| **Theme Flattener**             | Track win theme coverage            | Theme analysis across documents, heat map visualization                      |
+| **Evaluation Flattener**        | Cross-document analysis             | Unified SWARD analysis, consistency verification                             |
+| **Workflow Flattener**          | Status tracking                     | Dependency tracking, impact analysis                                         |
+| **RFQ Sharding Flattener**      | Process large RFQ documents         | Document sharding, metadata preservation, cross-shard reference tracking     |
+| **Proposal Sharding Flattener** | Handle large proposal content       | Content segmentation, context preservation, win theme tracking across shards |
 
 These flattener enhancements provide significant benefits:
 
@@ -333,6 +335,9 @@ These flattener enhancements provide significant benefits:
 - Enhanced win probability through better theme integration
 - Early identification of compliance gaps
 - Better support for large and complex proposals
+- Efficient processing of extensive RFQs through intelligent sharding
+- Parallel development capabilities for large proposal teams
+- Improved handling of documents exceeding token limits
 
 ## Supporting Documentation
 
@@ -348,6 +353,8 @@ The expansion pack includes comprehensive documentation:
 - **Review Simulation**: Simulating the evaluation process
 - **Submission Checklist**: Ensuring formatting and compliance
 - **Continuous Improvement**: Learning from debriefs and refining approaches
+- **Sharding Guide**: Breaking down large documents for efficient processing
+- **Reassembly Guide**: Effectively combining sharded content for final submission
 
 ## Maintained By
 

@@ -77,6 +77,12 @@ workflow:
       requires: rfq-imported-content
       notes: "Aggregate all RFQ documents into a single analyzable corpus for improved analysis and traceability."
 
+    - step_name: rfq_sharding
+      uses: bmad-flatten
+      creates: rfq-shards-manifest.json
+      requires: rfq-imported-content
+      notes: "Break down large RFQ documents into manageable shards for improved processing."
+
     - agent: compliance-matrix-builder
       creates: compliance-matrix.md
       uses: compliance-matrix-tmpl.yaml
@@ -117,6 +123,14 @@ workflow:
         - proposal-outline.md
       uses_task: proposal-content-generation.md
       notes: "Draft management approach narrative with win themes. SAVE OUTPUT: Copy final management-approach.md to your project's docs/ folder."
+
+    - step_name: proposal_content_sharding
+      uses: bmad-flatten
+      creates: proposal-shards-manifest.json
+      requires:
+        - technical-approach.md
+        - management-approach.md
+      notes: "Shard large proposal content for improved analysis and review."
 
     - agent: labor-mapping-assistant
       creates: staffing-plan.md
@@ -270,6 +284,26 @@ workflow:
         - Parallel workstream enablement
         - Impact analysis for proposed changes
       priority: low
+
+    - name: rfq-sharding-flattener
+      description: "Process and shard large RFQ documents into manageable, context-preserving chunks"
+      implements:
+        - RFQ document structure recognition
+        - Semantic sharding based on requirement boundaries
+        - Metadata preservation across shards
+        - Shard manifest generation
+        - Cross-shard reference tracking
+      priority: high
+
+    - name: proposal-sharding-flattener
+      description: "Enable efficient development of lengthy technical and management narratives through sharding"
+      implements:
+        - Logical content segmentation
+        - Context preservation between shards
+        - Win theme and requirement tracking across shards
+        - Parallel development workflow support
+        - Content reassembly process
+      priority: high
 
   flow_diagram: |
     ```mermaid
